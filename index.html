@@ -1,4 +1,4 @@
-<!doctype <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -10,6 +10,51 @@
     <!--script src="main.js"></script-->
 </head>
 <body>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="page-header">
+              <h1>Currency Converter 
+              <small><small><br/>ALCWithGoogle MWS #7daysOfCode challenge using free.currencyconverterapi.com</small></small></h1>
+                
+              <!--p>The currencies used in the drop down are requested from <a href="https://free.currencyconverterapi.com/api/v5/currencies?" target="-blank"><q>https://free.currencyconverterapi.com/api/v5/currencies?</q></a>.</p-->
+                          
+            </div>
     
+             
+    
+            <div class="row">
+              <div class="col-md-6">
+                <form role="form" class="form">
+                  <div classs="form-group">
+                    <label class="label-control" for="currencyFrom">From:</label>
+                    <select class="form-control" id="currencyFrom" name="currencyFrom"></select>
+                  </div>
+    
+                  <div classs="form-group">
+                    <label class="label-control" for="currencyTo">To:</label>
+                    <select class="form-control" id="currencyTo" name="currencyTo"></select>
+                  </div>
+    
+                  <div classs="form-group">
+                    <label class="label-control" for="amount">Amount:</label> 
+                    <input type="text" class="form-control" id="amount" name="amount" />
+                  </div>
+    
+                  <div class="form-group">
+                    <input type="button" value="calculate" onclick="" class="btn btn-success" />
+                  </div>
+    
+                  <div classs="form-group">
+                    <label id="result" class="label-control lead"></label>
+                  </div>
+                </form>
+              </div>
+    
+              
+            </div>
+          </div>
+        </div>
+      </div>
 </body>
 </html>
