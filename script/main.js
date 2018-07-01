@@ -13,7 +13,6 @@
     let result = parseFloat(
       Math.round(data[currPair] * currAmt*100)/100
     ).toLocaleString();
-    console.log(data); 
     labelVal.innerHTML += result;
   }
 
@@ -79,4 +78,16 @@ fetchOnload = () => {
   }
 
   fetchJSON2(currencies);
+  
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+             .register('./sw.js')
+             .then(function() { console.log('Service Worker Registered'); });
+  }
+  
+
 }
+
+
+ 
+
