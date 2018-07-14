@@ -1,0 +1,24 @@
+{
+  "name": "currency_converter",
+  "version": "1.0.0",
+  "description": "ALCGoogle Udacity Mobile Web Specialist #7daysOfCode Challenge - Currency Converter.\r Use free.currencyconverterapi.com to build a PWA",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp",
+    "serve": "serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aghogho-u/Currency-converter.git"
+  },
+  "author": "Aghogho Uwejeyan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aghogho-u/Currency-converter/issues"
+  },
+  "homepage": "https://github.com/aghogho-u/Currency-converter#readme",
+  "dependencies": {
+    "serve": "^9.2.0"
+  },
+  "devDependencies": {}
+}
