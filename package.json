@@ -2,9 +2,9 @@
   "name": "currency_converter",
   "version": "1.0.0",
   "description": "ALCGoogle Udacity Mobile Web Specialist #7daysOfCode Challenge - Currency Converter.\r Use free.currencyconverterapi.com to build a PWA",
-  "main": "gulpfile.js",
+  "main": "index.html",
   "scripts": {
-    "start": "gulp",
+    "start": "index.html",
     "serve": "serve"
   },
   "repository": {
