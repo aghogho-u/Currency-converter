@@ -20,9 +20,10 @@ self.addEventListener('install', event=>{
               console.log('[ServiceWorker] Caching');
                return cache.addAll(cacheFiles)
                
-             }).then(()=>{
-               return self.skipWaiting();
              })
+            //  .then(()=>{
+            //    return self.skipWaiting();
+            //  })
            );
 })
 
