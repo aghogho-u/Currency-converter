@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/aghogho-u/Currency-converter#readme",
   "dependencies": {
+    "live-server": "^1.2.0",
     "serve": "^9.2.0"
   },
   "devDependencies": {}

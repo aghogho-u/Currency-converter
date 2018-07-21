@@ -3,10 +3,10 @@ let cacheFiles = [
   '/',
   'index.html',
   '/script/main.js',
-  'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css',
-  'https://code.jquery.com/jquery-3.3.1.slim.min.js',
-  'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js',
-  'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js',
+  '/style/bootstrap.min.css',
+  '/style/jquery-3.3.1.slim.min.js',
+  '/style/popper.min.js',
+  '/style/bootstrap.min.js',
   'https://free.currencyconverterapi.com/api/v5/currencies?',
   'README.md'
 ];
@@ -17,13 +17,13 @@ self.addEventListener('install', event=>{
     console.log('[Service worker] installed');
     event.waitUntil(
              caches.open(cacheName).then(cache=> {
-              console.log('[ServiceWorker] Caching');
+              console.log('[ServiceWorker] Caching...');
                return cache.addAll(cacheFiles)
                
              })
-            //  .then(()=>{
-            //    return self.skipWaiting();
-            //  })
+             .then(()=>{
+               return self.skipWaiting();
+             })
            );
 })
 
@@ -50,35 +50,19 @@ self.addEventListener('activate', event=>{
 
 
 
-
-self.addEventListener('fetch', e=> {
-  console.log('[Service Worker] Fetch', e.request.url);
-  
-  e.respondWith(fromCache(e.request));
-  
-  e.waitUntil(update(e.request));
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.open(cacheName).then(function(cache) {
+        return fetch(event.request).then(function(networkResponse) {
+          cache.put(event.request, networkResponse.clone());
+            console.log('updating cache from network...');
+            return networkResponse;
+            
+        }).catch(function() {
+          console.log('fetched from cache');  
+          return cache.match(event.request);
+            
+           })
+    })
+  );
 });
-
-
-
-
-fromCache = (request) => {
-  return caches.open(cacheFiles).then(function (cache) {
-    return cache.match(request).then(function (matching) {
-      return matching || Promise.reject('no-match');
-    });
-  });
-}
-
-
-update = (request)=> {
-  console.log('updating...');
-  return caches.open(cacheFiles).then( cache=> {
-    return fetch(request).then(response=> {
-      return cache.put(request, response);
-    });
-  });
-}
-
-
-
