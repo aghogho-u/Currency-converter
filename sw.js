@@ -7,7 +7,7 @@ let cacheFiles = [
   '/style/jquery-3.3.1.slim.min.js',
   '/style/popper.min.js',
   '/style/bootstrap.min.js',
-  'https://free.currencyconverterapi.com/api/v5/currencies?',
+  //'https://free.currencyconverterapi.com/api/v5/currencies?',
   'README.md'
 ];
 
