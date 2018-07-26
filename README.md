@@ -7,4 +7,4 @@ Api employed is: free.currencyconverterapi.com
 
 Checkout WebApp at: https://aghogho-u.github.io/Currency-converter
 
-If you clone this project to a localhost, you'll need to install live-server (on mpm)
+If you clone this project to a localhost, you'll need to install live-server (on npm)
