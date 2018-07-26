@@ -1,13 +1,13 @@
 let cacheName = 'currencyConverter-v1';
 let cacheFiles = [
-  '/',
+  './',
   'index.html',
-  '/script/main.js',
-  '/style/bootstrap.min.css',
-  '/style/jquery-3.3.1.slim.min.js',
-  '/style/popper.min.js',
-  '/style/bootstrap.min.js',
-  //'https://free.currencyconverterapi.com/api/v5/currencies?',
+  './script/main.js',
+  './style/bootstrap.min.css',
+  './style/jquery-3.3.1.slim.min.js',
+  './style/popper.min.js',
+  './style/bootstrap.min.js',
+  'https://free.currencyconverterapi.com/api/v5/currencies?',
   'README.md'
 ];
 
